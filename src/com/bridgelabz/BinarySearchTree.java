@@ -40,6 +40,18 @@ public class BinarySearchTree<K> implements Comparable{
         }
     }
 
+    int size() {
+        return size(root);
+    }
+
+    int size(INode node)
+    {
+        if (node == null)
+            return 0;
+        else
+            return(size(node.left) + 1 + size(node.right));
+    }
+
     @Override
     public int compareTo(Object o) {
 
